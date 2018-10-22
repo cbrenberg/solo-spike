@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
 
 router.put('/', (req, res) => {
   console.log(req.body);
-  pool.query(`UPDATE "beans" SET "${req.body.column}"='${req.body.value}' WHERE "id"=${req.body.id}`)
+  pool.query(`UPDATE "beans" SET "$1"='$2' WHERE "id"=$3;`, [req.body.column, req.body.value, req.body.id])
     .then(() => {
       res.sendStatus(201);
     })

@@ -23,7 +23,6 @@ class InventoryTable extends Component {
   }
 
   renderEditable = (cellInfo) => {
-    console.log(cellInfo);
     return (
       <div
         style={{ backgroundColor: "#fafafa" }}
